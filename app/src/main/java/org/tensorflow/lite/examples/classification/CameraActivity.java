@@ -137,8 +137,6 @@ public abstract class CameraActivity extends AppCompatActivity
 
     }
 
-
-
     Button btnSnap = (Button)findViewById(R.id.btnSnap);
     btnSnap.setOnClickListener(new View.OnClickListener(){
 
@@ -459,6 +457,16 @@ public abstract class CameraActivity extends AppCompatActivity
     LOGGER.d("onResume " + this);
     super.onResume();
 
+    /*
+    setContentView(R.layout.tfe_ic_activity_camera);
+
+    if (hasPermission()) {
+      setFragment();
+    } else {
+      requestPermission();
+
+    }*/
+
     handlerThread = new HandlerThread("inference");
     handlerThread.start();
     handler = new Handler(handlerThread.getLooper());
@@ -478,6 +486,8 @@ public abstract class CameraActivity extends AppCompatActivity
     }
 
     super.onPause();
+
+
   }
 
   @Override

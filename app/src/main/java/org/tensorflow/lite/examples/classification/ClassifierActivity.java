@@ -413,7 +413,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
       MultipartUtility multipart = new MultipartUtility(requestURL, charset);
 
       multipart.addHeaderField("User-Agent", "mememe");
-      multipart.addFormField("name", "BB_"+filename);
+      multipart.addFormField("name", filename.toUpperCase());
 
       multipart.addFilePart("image", uploadFile);
       List<String> response = multipart.finish();
